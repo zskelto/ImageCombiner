@@ -24,15 +24,19 @@ public class ImageCombinerListener implements ActionListener {
             test.setBaseLayer();
         }
         else if(e.getSource() == gui.getBaseLayerShow()){
-            ImageIcon icon = new ImageIcon(test.getBaseLayer());
-            gui.setImage(icon);
+            if(test.getBaseLayer() != null) {
+                ImageIcon icon = new ImageIcon(test.getBaseLayer());
+                gui.setImage(icon);
+            }
         }
         else if(e.getSource() == gui.getTopLayerLoad()){
             test.setTopLayer();
         }
         else if(e.getSource() == gui.getTopLayerShow()){
-            ImageIcon icon = new ImageIcon(test.getTopLayer());
-            gui.setImage(icon);
+            if(test.getTopLayer() != null) {
+                ImageIcon icon = new ImageIcon(test.getTopLayer());
+                gui.setImage(icon);
+            }
         }
     }
 }
