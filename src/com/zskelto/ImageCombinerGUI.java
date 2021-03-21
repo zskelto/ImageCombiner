@@ -13,6 +13,7 @@ public class ImageCombinerGUI extends JFrame {
     private JLabel currentCoords;
     private JLabel scalePercent;
     private JSlider scale;
+    private JComboBox<String> fileType;
     private JPanel stats, setupButtons, combineButtons, image;
 
     public ImageCombinerGUI(){
@@ -65,6 +66,11 @@ public class ImageCombinerGUI extends JFrame {
         scalePercent.setFont((new Font(scalePercent.getFont().getName(),Font.PLAIN, 14)));
         scalePercent.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
         stats.add(scalePercent);
+
+        //File Type to save output as.
+        String[] types= {"png", "jpg", "gif"};
+        fileType = new JComboBox<>(types);
+        combineButtons.add(fileType);
 
         //Set Frame Settings
         this.setTitle("ImageCombiner");
@@ -123,6 +129,8 @@ public class ImageCombinerGUI extends JFrame {
     public JButton getSave() { return this.save; }
 
     public int getSliderData() { return scale.getValue(); }
+
+    public String getFileType() { return String.valueOf(fileType.getSelectedItem()); }
 
     public void setImage(ImageIcon icon){
         displayImage.setIcon(icon);

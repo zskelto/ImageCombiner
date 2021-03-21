@@ -88,10 +88,10 @@ public class ImageCombiner {
         }
     }
 
-    public void saveImage(File file){
+    public void saveImage(File file, String type){
         File output = new File(file, "output.png");
         try {
-            ImageIO.write(base_layer,"png",output);
+            ImageIO.write(base_layer,type,output);
         }
         catch(IOException e){
             System.out.println(e.getMessage());

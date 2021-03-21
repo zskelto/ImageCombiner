@@ -124,7 +124,7 @@ public class ImageCombinerListener implements ActionListener, MouseListener, Cha
                 fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 if (fileChooser.showOpenDialog(gui) == JFileChooser.APPROVE_OPTION) {
                     File file = fileChooser.getSelectedFile();
-                    test.saveImage(file);
+                    test.saveImage(file, gui.getFileType());
                 }
             }
         }
